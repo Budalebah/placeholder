@@ -37,9 +37,9 @@
 #include <nil/crypto3/algebra/curves/pallas.hpp>
 #include <nil/crypto3/algebra/fields/arithmetic_params/pallas.hpp>
 
-#include <nil/crypto3/math/algorithms/unity_root.hpp>
-#include <nil/crypto3/math/polynomial/lagrange_interpolation.hpp>
-#include <nil/crypto3/math/algorithms/calculate_domain_set.hpp>
+#include <parallel/nil/crypto3/math/algorithms/unity_root.hpp>
+#include <parallel/nil/crypto3/math/polynomial/lagrange_interpolation.hpp>
+#include <parallel/nil/crypto3/math/algorithms/calculate_domain_set.hpp>
 
 #include <nil/crypto3/hash/algorithm/hash.hpp>
 #include <nil/crypto3/hash/sha2.hpp>
@@ -47,22 +47,22 @@
 #include <nil/crypto3/hash/keccak.hpp>
 #include <nil/crypto3/hash/poseidon.hpp>
 
-#include <nil/crypto3/zk/snark/systems/plonk/placeholder/prover.hpp>
-#include <nil/crypto3/zk/snark/systems/plonk/placeholder/verifier.hpp>
-#include <nil/crypto3/zk/snark/systems/plonk/placeholder/permutation_argument.hpp>
-#include <nil/crypto3/zk/snark/systems/plonk/placeholder/lookup_argument.hpp>
-#include <nil/crypto3/zk/snark/systems/plonk/placeholder/gates_argument.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/placeholder/prover.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/placeholder/verifier.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/placeholder/permutation_argument.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/placeholder/lookup_argument.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/placeholder/gates_argument.hpp>
 
-#include <nil/crypto3/zk/snark/systems/plonk/placeholder/preprocessor.hpp>
-#include <nil/crypto3/zk/snark/systems/plonk/placeholder/detail/placeholder_policy.hpp>
-#include <nil/crypto3/zk/snark/arithmetization/plonk/constraint_system.hpp>
-#include <nil/crypto3/zk/snark/arithmetization/plonk/gate.hpp>
-#include <nil/crypto3/zk/transcript/fiat_shamir.hpp>
-#include <nil/crypto3/zk/commitments/polynomial/fri.hpp>
-#include <nil/crypto3/zk/commitments/polynomial/lpc.hpp>
-#include <nil/crypto3/zk/commitments/batched_commitment.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/placeholder/preprocessor.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/placeholder/detail/placeholder_policy.hpp>
+#include <parallel/nil/crypto3/zk/snark/arithmetization/plonk/constraint_system.hpp>
+#include <parallel/nil/crypto3/zk/snark/arithmetization/plonk/gate.hpp>
+#include <parallel/nil/crypto3/zk/transcript/fiat_shamir.hpp>
+#include <parallel/nil/crypto3/zk/commitments/polynomial/fri.hpp>
+#include <parallel/nil/crypto3/zk/commitments/polynomial/lpc.hpp>
+#include <parallel/nil/crypto3/zk/commitments/batched_commitment.hpp>
 
-#include <nil/crypto3/zk/test_tools/random_test_initializer.hpp>
+#include <parallel/nil/crypto3/zk/test_tools/random_test_initializer.hpp>
 
 #include "circuits.hpp"
 

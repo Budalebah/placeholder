@@ -1,9 +1,9 @@
 #ifndef CRYPTO3_ZK_PLONK_BATCHED_PICKLES_EXPR_HPP
 #define CRYPTO3_ZK_PLONK_BATCHED_PICKLES_EXPR_HPP
 
-#include <nil/crypto3/zk/snark/systems/plonk/pickles/permutation.hpp>
-#include <nil/crypto3/zk/snark/systems/plonk/pickles/detail.hpp>
-#include <nil/crypto3/math/domains/basic_radix2_domain.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/pickles/permutation.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/pickles/detail.hpp>
+#include <parallel/nil/crypto3/math/domains/basic_radix2_domain.hpp>
 
 #include <cassert>
 

@@ -33,12 +33,12 @@
 
 
 #include <nil/crypto3/algebra/fields/arithmetic_params/bls12.hpp>
-#include <nil/crypto3/math/algorithms/make_evaluation_domain.hpp>
-#include <nil/crypto3/math/polynomial/polynomial.hpp>
-#include <nil/crypto3/math/polynomial/polynomial_dfs.hpp>
-#include <nil/crypto3/math/polynomial/shift.hpp>
-#include <nil/crypto3/math/algorithms/unity_root.hpp>
-#include <nil/crypto3/math/domains/detail/basic_radix2_domain_aux.hpp>
+#include <parallel/nil/crypto3/math/algorithms/make_evaluation_domain.hpp>
+#include <parallel/nil/crypto3/math/polynomial/polynomial.hpp>
+#include <parallel/nil/crypto3/math/polynomial/polynomial_dfs.hpp>
+#include <parallel/nil/crypto3/math/polynomial/shift.hpp>
+#include <parallel/nil/crypto3/math/algorithms/unity_root.hpp>
+#include <parallel/nil/crypto3/math/domains/detail/basic_radix2_domain_aux.hpp>
 
 #include <nil/crypto3/algebra/random_element.hpp>
 

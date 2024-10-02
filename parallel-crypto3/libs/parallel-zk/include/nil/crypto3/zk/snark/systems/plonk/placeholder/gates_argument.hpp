@@ -32,25 +32,25 @@
 #include <iostream>
 #include <memory>
 
-#include <nil/crypto3/math/polynomial/polynomial.hpp>
-#include <nil/crypto3/math/polynomial/shift.hpp>
-#include <nil/crypto3/math/domains/evaluation_domain.hpp>
-#include <nil/crypto3/math/algorithms/make_evaluation_domain.hpp>
-#include <nil/crypto3/zk/snark/arithmetization/plonk/assignment.hpp>
+#include <parallel/nil/crypto3/math/polynomial/polynomial.hpp>
+#include <parallel/nil/crypto3/math/polynomial/shift.hpp>
+#include <parallel/nil/crypto3/math/domains/evaluation_domain.hpp>
+#include <parallel/nil/crypto3/math/algorithms/make_evaluation_domain.hpp>
+#include <parallel/nil/crypto3/zk/snark/arithmetization/plonk/assignment.hpp>
 
 #include <nil/crypto3/hash/sha2.hpp>
 
-#include <nil/crypto3/container/merkle/tree.hpp>
+#include <parallel/nil/crypto3/container/merkle/tree.hpp>
 
-#include <nil/crypto3/zk/transcript/fiat_shamir.hpp>
-#include <nil/crypto3/zk/snark/arithmetization/plonk/gate.hpp>
-#include <nil/crypto3/zk/snark/arithmetization/plonk/constraint_system.hpp>
-#include <nil/crypto3/zk/snark/systems/plonk/placeholder/params.hpp>
-#include <nil/crypto3/zk/snark/systems/plonk/placeholder/detail/placeholder_policy.hpp>
-#include <nil/crypto3/zk/snark/arithmetization/plonk/constraint.hpp>
-#include <nil/crypto3/zk/math/expression.hpp>
-#include <nil/crypto3/zk/math/expression_evaluator.hpp>
-#include <nil/crypto3/zk/math/expression_visitors.hpp>
+#include <parallel/nil/crypto3/zk/transcript/fiat_shamir.hpp>
+#include <parallel/nil/crypto3/zk/snark/arithmetization/plonk/gate.hpp>
+#include <parallel/nil/crypto3/zk/snark/arithmetization/plonk/constraint_system.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/placeholder/params.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/placeholder/detail/placeholder_policy.hpp>
+#include <parallel/nil/crypto3/zk/snark/arithmetization/plonk/constraint.hpp>
+#include <parallel/nil/crypto3/zk/math/expression.hpp>
+#include <parallel/nil/crypto3/zk/math/expression_evaluator.hpp>
+#include <parallel/nil/crypto3/zk/math/expression_visitors.hpp>
 
 #include <nil/crypto3/bench/scoped_profiler.hpp>
 
@@ -123,6 +123,20 @@ namespace nil {
                                 assignment.resize(extended_domain_size, domain, extended_domain);
                                 variable_values_out[var] = std::move(assignment);
                             }, ThreadPool::PoolLevel::HIGH);
+                        /*for (const auto& [var, count]: variable_counts) {
+                            // We may have variable values in required sizes in some cases.
+                            if (variable_values_out.find(var) != variable_values_out.end())
+                                continue;
+                            // Convert the variable to polynomial_dfs variable type.
+                            polynomial_dfs_variable_type var_dfs(var.index, var.rotation, var.relative,
+                                static_cast<typename polynomial_dfs_variable_type::column_type>(
+                                    static_cast<std::uint8_t>(var.type)));
+                            polynomial_dfs_type assignment = assignments.get_variable_value(var_dfs, domain);
+                            if (count > 1) {
+                                assignment.resize(extended_domain_size, domain, extended_domain);
+                            }
+                            variable_values_out[var] = assignment;
+                        }*/
                     }
 
                     static inline std::array<polynomial_dfs_type, argument_size>

@@ -28,11 +28,11 @@
 #ifndef CRYPTO3_ZK_PLONK_TABLE_DETAIL_COLUMN_POLYNOMIAL_HPP
 #define CRYPTO3_ZK_PLONK_TABLE_DETAIL_COLUMN_POLYNOMIAL_HPP
 
-#include <nil/crypto3/math/polynomial/polynomial.hpp>
-#include <nil/crypto3/math/domains/evaluation_domain.hpp>
+#include <parallel/nil/crypto3/math/polynomial/polynomial.hpp>
+#include <parallel/nil/crypto3/math/domains/evaluation_domain.hpp>
 
-#include <nil/crypto3/zk/math/permutation.hpp>
-#include <nil/crypto3/zk/snark/arithmetization/plonk/assignment.hpp>
+#include <parallel/nil/crypto3/zk/math/permutation.hpp>
+#include <parallel/nil/crypto3/zk/snark/arithmetization/plonk/assignment.hpp>
 
 namespace nil {
     namespace crypto3 {

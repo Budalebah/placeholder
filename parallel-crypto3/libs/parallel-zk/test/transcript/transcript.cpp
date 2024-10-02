@@ -43,7 +43,7 @@
 #include <nil/crypto3/hash/poseidon.hpp>
 #include <nil/crypto3/hash/keccak.hpp>
 
-#include <nil/crypto3/zk/transcript/fiat_shamir.hpp>
+#include <parallel/nil/crypto3/zk/transcript/fiat_shamir.hpp>
 
 using namespace nil::crypto3;
 using namespace nil::crypto3::zk;

@@ -33,15 +33,15 @@
 #include <cmath>
 #include <utility>
 
-#include <nil/crypto3/zk/snark/systems/plonk/placeholder/prover.hpp>
-#include <nil/crypto3/zk/snark/systems/plonk/placeholder/verifier.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/placeholder/prover.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/placeholder/verifier.hpp>
 
-#include <nil/crypto3/zk/transcript/fiat_shamir.hpp>
+#include <parallel/nil/crypto3/zk/transcript/fiat_shamir.hpp>
 
-#include <nil/crypto3/zk/commitments/polynomial/fri.hpp>
-#include <nil/crypto3/zk/commitments/polynomial/lpc.hpp>
-#include <nil/crypto3/zk/commitments/polynomial/kzg.hpp>
-#include <nil/crypto3/zk/commitments/polynomial/kzg_v2.hpp>
+#include <parallel/nil/crypto3/zk/commitments/polynomial/fri.hpp>
+#include <parallel/nil/crypto3/zk/commitments/polynomial/lpc.hpp>
+#include <parallel/nil/crypto3/zk/commitments/polynomial/kzg.hpp>
+#include <parallel/nil/crypto3/zk/commitments/polynomial/kzg_v2.hpp>
 
 #include "circuits.hpp"
 

@@ -21,8 +21,8 @@
 #include <nil/crypto3/algebra/fields/arithmetic_params/bls12.hpp>
 #include <nil/crypto3/algebra/fields/arithmetic_params/ed25519.hpp>
 #include <nil/crypto3/algebra/fields/arithmetic_params/pallas.hpp>
-#include <nil/crypto3/zk/snark/arithmetization/plonk/constraint_system.hpp>
-#include <nil/crypto3/zk/snark/arithmetization/plonk/params.hpp>
+#include <parallel/nil/crypto3/zk/snark/arithmetization/plonk/constraint_system.hpp>
+#include <parallel/nil/crypto3/zk/snark/arithmetization/plonk/params.hpp>
 #include <nil/proof-generator/prover.hpp>
 #include <unordered_map>
 
@@ -317,13 +317,13 @@ int curve_dependent_main(const std::optional<uint64_t>& shardId,
     }
 
     using CurveType = nil::crypto3::algebra::curves::pallas;
-    using HashType = nil::crypto3::hashes::keccak_1600<256>;
+    using HashType = nil::crypto3::hashes::sha2<256>;//nil::crypto3::hashes::keccak_1600<256>;
 
     auto prover = nil::proof_generator::Prover<CurveType, HashType>(
             9,  //lambda
-            2,  //expand_factor
-            0,  //max_quotient_chunks
-            69  //grind
+            0,  //expand_factor
+            20,  //max_quotient_chunks
+            0//69  //grind
         );
 
     // for each circuit

@@ -27,18 +27,18 @@
 #ifndef CRYPTO3_ZK_PLONK_BATCHED_PICKLES_VERIFIER_HPP
 #define CRYPTO3_ZK_PLONK_BATCHED_PICKLES_VERIFIER_HPP
 
-#include <nil/crypto3/zk/snark/systems/plonk/pickles/detail.hpp>
-#include <nil/crypto3/zk/snark/systems/plonk/pickles/alphas.hpp>
-#include <nil/crypto3/zk/snark/systems/plonk/pickles/verifier_index.hpp>
-#include <nil/crypto3/zk/snark/systems/plonk/pickles/proof.hpp>
-#include <nil/crypto3/zk/snark/systems/plonk/pickles/oracles.hpp>
-#include <nil/crypto3/zk/snark/systems/plonk/pickles/constants.hpp>
-#include <nil/crypto3/zk/snark/systems/plonk/pickles/detail/mapping.hpp>
-#include <nil/crypto3/zk/snark/systems/plonk/pickles/constraints.hpp>
-#include <nil/crypto3/zk/commitments/polynomial/kimchi_pedersen.hpp>
-#include <nil/crypto3/zk/transcript/kimchi_transcript.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/pickles/detail.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/pickles/alphas.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/pickles/verifier_index.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/pickles/proof.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/pickles/oracles.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/pickles/constants.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/pickles/detail/mapping.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/pickles/constraints.hpp>
+#include <parallel/nil/crypto3/zk/commitments/polynomial/kimchi_pedersen.hpp>
+#include <parallel/nil/crypto3/zk/transcript/kimchi_transcript.hpp>
 
-#include <nil/crypto3/math/polynomial/polynomial.hpp>
+#include <parallel/nil/crypto3/math/polynomial/polynomial.hpp>
 
 #include <vector>
 #include <tuple>

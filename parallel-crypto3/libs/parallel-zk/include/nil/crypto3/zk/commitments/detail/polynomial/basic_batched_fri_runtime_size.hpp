@@ -29,16 +29,16 @@
 
 #include <nil/crypto3/marshalling/algebra/types/field_element.hpp>
 
-#include <nil/crypto3/math/polynomial/polynomial.hpp>
-#include <nil/crypto3/math/polynomial/lagrange_interpolation.hpp>
-#include <nil/crypto3/math/domains/evaluation_domain.hpp>
-#include <nil/crypto3/math/algorithms/make_evaluation_domain.hpp>
+#include <parallel/nil/crypto3/math/polynomial/polynomial.hpp>
+#include <parallel/nil/crypto3/math/polynomial/lagrange_interpolation.hpp>
+#include <parallel/nil/crypto3/math/domains/evaluation_domain.hpp>
+#include <parallel/nil/crypto3/math/algorithms/make_evaluation_domain.hpp>
 
-#include <nil/crypto3/container/merkle/tree.hpp>
-#include <nil/crypto3/container/merkle/proof.hpp>
+#include <parallel/nil/crypto3/container/merkle/tree.hpp>
+#include <parallel/nil/crypto3/container/merkle/proof.hpp>
 
-#include <nil/crypto3/zk/transcript/fiat_shamir.hpp>
-#include <nil/crypto3/zk/commitments/detail/polynomial/basic_fri.hpp>
+#include <parallel/nil/crypto3/zk/transcript/fiat_shamir.hpp>
+#include <parallel/nil/crypto3/zk/commitments/detail/polynomial/basic_fri.hpp>
 
 namespace nil {
     namespace crypto3 {

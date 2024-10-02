@@ -30,14 +30,14 @@
 #ifndef CRYPTO3_ZK_LIST_POLYNOMIAL_COMMITMENT_SCHEME_HPP
 #define CRYPTO3_ZK_LIST_POLYNOMIAL_COMMITMENT_SCHEME_HPP
 
-#include <nil/crypto3/math/polynomial/polynomial.hpp>
-#include <nil/crypto3/math/polynomial/lagrange_interpolation.hpp>
+#include <parallel/nil/crypto3/math/polynomial/polynomial.hpp>
+#include <parallel/nil/crypto3/math/polynomial/lagrange_interpolation.hpp>
 
-#include <nil/crypto3/container/merkle/tree.hpp>
-#include <nil/crypto3/container/merkle/proof.hpp>
+#include <parallel/nil/crypto3/container/merkle/tree.hpp>
+#include <parallel/nil/crypto3/container/merkle/proof.hpp>
 
-#include <nil/crypto3/zk/commitments/batched_commitment.hpp>
-#include <nil/crypto3/zk/commitments/detail/polynomial/basic_fri.hpp>
+#include <parallel/nil/crypto3/zk/commitments/batched_commitment.hpp>
+#include <parallel/nil/crypto3/zk/commitments/detail/polynomial/basic_fri.hpp>
 
 #include <nil/actor/core/thread_pool.hpp>
 #include <nil/actor/core/parallelization_utils.hpp>

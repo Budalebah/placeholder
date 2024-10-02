@@ -31,13 +31,13 @@
 
 #include <boost/config.hpp>
 
-#include <nil/crypto3/zk/snark/systems/ppzksnark/r1cs_ppzksnark.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/ppzksnark/r1cs_ppzksnark.hpp>
 
 #include "../r1cs_examples.hpp"
 
-#include <nil/crypto3/zk/algorithms/generate.hpp>
-#include <nil/crypto3/zk/algorithms/verify.hpp>
-#include <nil/crypto3/zk/algorithms/prove.hpp>
+#include <parallel/nil/crypto3/zk/algorithms/generate.hpp>
+#include <parallel/nil/crypto3/zk/algorithms/verify.hpp>
+#include <parallel/nil/crypto3/zk/algorithms/prove.hpp>
 
 namespace nil {
     namespace crypto3 {

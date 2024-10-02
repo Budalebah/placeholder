@@ -84,8 +84,8 @@ function(setup_proof_generator_target)
 endfunction()
 
 # Declare single-threaded target
-set(SINGLE_THREADED_TARGET "${CURRENT_PROJECT_NAME}-single-threaded")
-setup_proof_generator_target(TARGET_NAME ${SINGLE_THREADED_TARGET})
+#set(SINGLE_THREADED_TARGET "${CURRENT_PROJECT_NAME}-single-threaded")
+#setup_proof_generator_target(TARGET_NAME ${SINGLE_THREADED_TARGET})
 
 
 # Declare multi-threaded target
@@ -98,4 +98,4 @@ install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/include/
         DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 
 # Install library
-install(TARGETS ${SINGLE_THREADED_TARGET}-lib ${MULTI_THREADED_TARGET}-lib EXPORT proof-producerTargets DESTINATION ${CMAKE_INSTALL_LIBDIR})
+install(TARGETS ${MULTI_THREADED_TARGET}-lib EXPORT proof-producerTargets DESTINATION ${CMAKE_INSTALL_LIBDIR})

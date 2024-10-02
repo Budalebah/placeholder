@@ -40,9 +40,9 @@
 #include <nil/crypto3/algebra/fields/bls12/base_field.hpp>
 #include <nil/crypto3/algebra/fields/bls12/scalar_field.hpp>
 
-#include <nil/crypto3/math/polynomial/polynomial.hpp>
+#include <parallel/nil/crypto3/math/polynomial/polynomial.hpp>
 
-#include <nil/crypto3/zk/commitments/polynomial/pedersen.hpp>
+#include <parallel/nil/crypto3/zk/commitments/polynomial/pedersen.hpp>
 
 using namespace nil::crypto3;
 

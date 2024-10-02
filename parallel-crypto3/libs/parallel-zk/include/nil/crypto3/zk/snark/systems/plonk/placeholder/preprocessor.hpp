@@ -34,22 +34,22 @@
 #include <string>
 #include <map>
 
-#include <nil/crypto3/math/algorithms/unity_root.hpp>
-#include <nil/crypto3/math/detail/field_utils.hpp>
-#include <nil/crypto3/math/polynomial/polynomial.hpp>
-#include <nil/crypto3/math/domains/evaluation_domain.hpp>
+#include <parallel/nil/crypto3/math/algorithms/unity_root.hpp>
+#include <parallel/nil/crypto3/math/detail/field_utils.hpp>
+#include <parallel/nil/crypto3/math/polynomial/polynomial.hpp>
+#include <parallel/nil/crypto3/math/domains/evaluation_domain.hpp>
 
-#include <nil/crypto3/zk/math/expression.hpp>
-#include <nil/crypto3/zk/math/expression_visitors.hpp>
-#include <nil/crypto3/zk/math/permutation.hpp>
-#include <nil/crypto3/zk/snark/systems/plonk/placeholder/detail/placeholder_policy.hpp>
-#include <nil/crypto3/zk/snark/arithmetization/plonk/copy_constraint.hpp>
-#include <nil/crypto3/zk/snark/arithmetization/plonk/table_description.hpp>
-#include <nil/crypto3/zk/snark/arithmetization/plonk/constraint.hpp>
-#include <nil/crypto3/zk/snark/arithmetization/plonk/constraint_system.hpp>
-#include <nil/crypto3/zk/snark/arithmetization/plonk/detail/column_polynomial.hpp>
+#include <parallel/nil/crypto3/zk/math/expression.hpp>
+#include <parallel/nil/crypto3/zk/math/expression_visitors.hpp>
+#include <parallel/nil/crypto3/zk/math/permutation.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/placeholder/detail/placeholder_policy.hpp>
+#include <parallel/nil/crypto3/zk/snark/arithmetization/plonk/copy_constraint.hpp>
+#include <parallel/nil/crypto3/zk/snark/arithmetization/plonk/table_description.hpp>
+#include <parallel/nil/crypto3/zk/snark/arithmetization/plonk/constraint.hpp>
+#include <parallel/nil/crypto3/zk/snark/arithmetization/plonk/constraint_system.hpp>
+#include <parallel/nil/crypto3/zk/snark/arithmetization/plonk/detail/column_polynomial.hpp>
 #include <nil/crypto3/marshalling/zk/types/plonk/constraint_system.hpp>
-#include <nil/crypto3/zk/snark/systems/plonk/placeholder/detail/transcript_initialization_context.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/placeholder/detail/transcript_initialization_context.hpp>
 
 #include <nil/crypto3/bench/scoped_profiler.hpp>
 
@@ -541,6 +541,7 @@ namespace nil {
                         const std::size_t max_quotient_poly_chunks = 0,
                         const typename FieldType::value_type& delta=algebra::fields::arithmetic_params<FieldType>::multiplicative_generator
                     ) {
+                        std::cout << "multithread process\n";
                         PROFILE_SCOPE("Placeholder public preprocessor");
 
                         std::size_t N_rows = table_description.rows_amount;

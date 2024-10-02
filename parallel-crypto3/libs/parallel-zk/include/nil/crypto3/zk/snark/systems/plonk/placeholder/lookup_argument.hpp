@@ -34,20 +34,20 @@
 #include <unordered_map>
 #include <thread>
 
-#include <nil/crypto3/math/polynomial/polynomial.hpp>
-#include <nil/crypto3/math/polynomial/shift.hpp>
-#include <nil/crypto3/math/domains/evaluation_domain.hpp>
-#include <nil/crypto3/math/algorithms/make_evaluation_domain.hpp>
+#include <parallel/nil/crypto3/math/polynomial/polynomial.hpp>
+#include <parallel/nil/crypto3/math/polynomial/shift.hpp>
+#include <parallel/nil/crypto3/math/domains/evaluation_domain.hpp>
+#include <parallel/nil/crypto3/math/algorithms/make_evaluation_domain.hpp>
 
 #include <nil/crypto3/hash/sha2.hpp>
 
-#include <nil/crypto3/container/merkle/tree.hpp>
+#include <parallel/nil/crypto3/container/merkle/tree.hpp>
 
-#include <nil/crypto3/zk/transcript/fiat_shamir.hpp>
-#include <nil/crypto3/zk/snark/arithmetization/plonk/lookup_constraint.hpp>
-#include <nil/crypto3/zk/snark/systems/plonk/placeholder/params.hpp>
-#include <nil/crypto3/zk/snark/systems/plonk/placeholder/detail/placeholder_policy.hpp>
-#include <nil/crypto3/zk/snark/systems/plonk/placeholder/preprocessor.hpp>
+#include <parallel/nil/crypto3/zk/transcript/fiat_shamir.hpp>
+#include <parallel/nil/crypto3/zk/snark/arithmetization/plonk/lookup_constraint.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/placeholder/params.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/placeholder/detail/placeholder_policy.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/placeholder/preprocessor.hpp>
 
 #include <nil/crypto3/bench/scoped_profiler.hpp>
 

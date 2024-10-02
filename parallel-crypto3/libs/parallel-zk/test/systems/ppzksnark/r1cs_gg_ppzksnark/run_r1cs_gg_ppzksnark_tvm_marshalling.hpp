@@ -31,12 +31,12 @@
 
 #include <tuple>
 
-#include <nil/crypto3/zk/algorithms/generate.hpp>
-#include <nil/crypto3/zk/algorithms/verify.hpp>
-#include <nil/crypto3/zk/algorithms/prove.hpp>
+#include <parallel/nil/crypto3/zk/algorithms/generate.hpp>
+#include <parallel/nil/crypto3/zk/algorithms/verify.hpp>
+#include <parallel/nil/crypto3/zk/algorithms/prove.hpp>
 
-#include <nil/crypto3/zk/snark/systems/ppzksnark/r1cs_gg_ppzksnark.hpp>
-#include <nil/crypto3/zk/snark/systems/ppzksnark/r1cs_gg_ppzksnark/marshalling.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/ppzksnark/r1cs_gg_ppzksnark.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/ppzksnark/r1cs_gg_ppzksnark/marshalling.hpp>
 
 #include <nil/marshalling/status_type.hpp>
 #include "../r1cs_examples.hpp"

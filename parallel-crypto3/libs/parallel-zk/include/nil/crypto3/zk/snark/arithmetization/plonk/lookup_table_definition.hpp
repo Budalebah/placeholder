@@ -28,7 +28,7 @@
 #include <string>
 #include <map>
 
-#include <nil/crypto3/zk/snark/arithmetization/plonk/constraint_system.hpp>
+#include <parallel/nil/crypto3/zk/snark/arithmetization/plonk/constraint_system.hpp>
 
 namespace nil {
     namespace crypto3 {

@@ -30,17 +30,17 @@
 #include <unordered_map>
 #include <algorithm>
 
-#include <nil/crypto3/math/polynomial/polynomial.hpp>
-#include <nil/crypto3/math/domains/basic_radix2_domain.hpp>
+#include <parallel/nil/crypto3/math/polynomial/polynomial.hpp>
+#include <parallel/nil/crypto3/math/domains/basic_radix2_domain.hpp>
 
 #include <nil/crypto3/algebra/random_element.hpp>
 #include <nil/crypto3/algebra/multiexp/multiexp.hpp>
 #include <nil/crypto3/algebra/multiexp/policies.hpp>
 #include <nil/crypto3/algebra/multiexp/inner_product.hpp>
 
-#include <nil/crypto3/zk/transcript/kimchi_transcript.hpp>
-#include <nil/crypto3/zk/snark/systems/plonk/pickles/detail/mapping.hpp>
-#include <nil/crypto3/zk/snark/systems/plonk/pickles/detail/kimchi_functions.hpp>
+#include <parallel/nil/crypto3/zk/transcript/kimchi_transcript.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/pickles/detail/mapping.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/pickles/detail/kimchi_functions.hpp>
 
 namespace nil {
     namespace crypto3 {

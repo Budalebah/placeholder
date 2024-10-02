@@ -28,12 +28,12 @@
 
 #include <vector>
 
-#include <nil/crypto3/math/detail/field_utils.hpp>
+#include <parallel/nil/crypto3/math/detail/field_utils.hpp>
 
-#include <nil/crypto3/math/domains/evaluation_domain.hpp>
-#include <nil/crypto3/math/domains/detail/basic_radix2_domain_aux.hpp>
-#include <nil/crypto3/math/algorithms/unity_root.hpp>
-#include <nil/crypto3/math/polynomial/polynomial.hpp>
+#include <parallel/nil/crypto3/math/domains/evaluation_domain.hpp>
+#include <parallel/nil/crypto3/math/domains/detail/basic_radix2_domain_aux.hpp>
+#include <parallel/nil/crypto3/math/algorithms/unity_root.hpp>
+#include <parallel/nil/crypto3/math/polynomial/polynomial.hpp>
 #include <nil/actor/core/parallelization_utils.hpp>
 
 namespace nil {

@@ -24,6 +24,7 @@
 #include <random>
 #include <sstream>
 #include <optional>
+#include <typeinfo>
 
 #include <boost/log/trivial.hpp>
 
@@ -40,18 +41,18 @@
 #include <nil/crypto3/marshalling/zk/types/plonk/assignment_table.hpp>
 #include <nil/crypto3/marshalling/zk/types/plonk/constraint_system.hpp>
 
-#include <nil/crypto3/math/algorithms/calculate_domain_set.hpp>
+#include <parallel/nil/crypto3/math/algorithms/calculate_domain_set.hpp>
 
-#include <nil/crypto3/zk/snark/arithmetization/plonk/constraint_system.hpp>
-#include <nil/crypto3/zk/snark/arithmetization/plonk/params.hpp>
-#include <nil/crypto3/zk/snark/systems/plonk/placeholder/detail/placeholder_policy.hpp>
-#include <nil/crypto3/zk/snark/systems/plonk/placeholder/detail/profiling.hpp>
-#include <nil/crypto3/zk/snark/systems/plonk/placeholder/params.hpp>
-#include <nil/crypto3/zk/snark/systems/plonk/placeholder/preprocessor.hpp>
-#include <nil/crypto3/zk/snark/systems/plonk/placeholder/proof.hpp>
-#include <nil/crypto3/zk/snark/systems/plonk/placeholder/prover.hpp>
-#include <nil/crypto3/zk/snark/systems/plonk/placeholder/verifier.hpp>
-#include <nil/crypto3/zk/transcript/fiat_shamir.hpp>
+#include <parallel/nil/crypto3/zk/snark/arithmetization/plonk/constraint_system.hpp>
+#include <parallel/nil/crypto3/zk/snark/arithmetization/plonk/params.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/placeholder/detail/placeholder_policy.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/placeholder/detail/profiling.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/placeholder/params.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/placeholder/preprocessor.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/placeholder/proof.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/placeholder/prover.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/placeholder/verifier.hpp>
+#include <parallel/nil/crypto3/zk/transcript/fiat_shamir.hpp>
 
 #include <nil/blueprint/transpiler/recursive_verifier_generator.hpp>
 
@@ -172,6 +173,8 @@ namespace nil {
                 , expand_factor_(expand_factor)
                 , max_quotient_chunks_(max_q_chunks)
                 , grind_(grind) {
+                    std::cout << "Init Prover: " << lambda << ", " << expand_factor << ", " << max_q_chunks << ", " << grind << "\n";
+                    std::cout << typeid(HashType).name() << "\n";
             }
 
             // The caller must call the preprocessor or load the preprocessed data before calling this function.
@@ -256,6 +259,13 @@ namespace nil {
                 BOOST_ASSERT(table_description_);
                 BOOST_ASSERT(constraint_system_);
                 BOOST_ASSERT(lpc_scheme_);
+                std::cout << "sha256 table:\n"
+                             << "witnesses = " << table_description_->witness_columns
+                             << " public inputs = " << table_description_->public_input_columns
+                             << " constants = " << table_description_->constant_columns
+                             << " selectors = " << table_description_->selector_columns
+                             << " used rows = " << table_description_->usable_rows_amount
+                             << " rows = " << table_description_->rows_amount << "\n";
 
                 BOOST_LOG_TRIVIAL(info) << "Generating proof...";
                 auto prover = nil::crypto3::zk::snark::placeholder_prover<BlueprintField, PlaceholderParams>(

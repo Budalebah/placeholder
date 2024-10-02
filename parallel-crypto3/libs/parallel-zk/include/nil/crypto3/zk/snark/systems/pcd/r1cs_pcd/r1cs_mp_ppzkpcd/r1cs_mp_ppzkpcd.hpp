@@ -57,12 +57,12 @@
 #include <memory>
 #include <vector>
 
-#include <nil/crypto3/zk/snark/set_commitment.hpp>
+#include <parallel/nil/crypto3/zk/snark/set_commitment.hpp>
 
-#include <nil/crypto3/zk/snark/systems/pcd/r1cs_pcd/ppzkpcd_compliance_predicate.hpp>
-#include <nil/crypto3/zk/snark/systems/pcd/r1cs_pcd/r1cs_mp_ppzkpcd/r1cs_mp_ppzkpcd_params.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/pcd/r1cs_pcd/ppzkpcd_compliance_predicate.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/pcd/r1cs_pcd/r1cs_mp_ppzkpcd/r1cs_mp_ppzkpcd_params.hpp>
 
-#include <nil/crypto3/zk/snark/systems/ppzksnark/r1cs_ppzksnark.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/ppzksnark/r1cs_ppzksnark.hpp>
 
 namespace nil {
     namespace crypto3 {

@@ -35,7 +35,7 @@
 #include <boost/variant.hpp>
 
 #include <nil/crypto3/hash/type_traits.hpp>
-#include <nil/crypto3/container/merkle/tree.hpp>
+#include <parallel/nil/crypto3/container/merkle/tree.hpp>
 
 namespace nil {
     namespace crypto3 {

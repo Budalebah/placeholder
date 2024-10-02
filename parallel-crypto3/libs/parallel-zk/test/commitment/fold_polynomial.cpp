@@ -40,12 +40,12 @@
 #include <nil/crypto3/algebra/fields/arithmetic_params/vesta.hpp>
 #include <nil/crypto3/algebra/random_element.hpp>
 
-#include <nil/crypto3/math/polynomial/polynomial.hpp>
-#include <nil/crypto3/math/polynomial/polynomial_dfs.hpp>
-#include <nil/crypto3/math/polynomial/lagrange_interpolation.hpp>
-#include <nil/crypto3/math/algorithms/calculate_domain_set.hpp>
+#include <parallel/nil/crypto3/math/polynomial/polynomial.hpp>
+#include <parallel/nil/crypto3/math/polynomial/polynomial_dfs.hpp>
+#include <parallel/nil/crypto3/math/polynomial/lagrange_interpolation.hpp>
+#include <parallel/nil/crypto3/math/algorithms/calculate_domain_set.hpp>
 
-#include <nil/crypto3/zk/commitments/detail/polynomial/fold_polynomial.hpp>
+#include <parallel/nil/crypto3/zk/commitments/detail/polynomial/fold_polynomial.hpp>
 
 using namespace nil::crypto3;
 

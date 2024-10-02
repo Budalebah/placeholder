@@ -27,15 +27,15 @@
 #ifndef CRYPTO3_ZK_PLONK_BATCHED_PICKLES_ORACLES_HPP
 #define CRYPTO3_ZK_PLONK_BATCHED_PICKLES_ORACLES_HPP
 
-#include <nil/crypto3/zk/snark/systems/plonk/pickles/detail.hpp>
-#include <nil/crypto3/zk/snark/systems/plonk/pickles/verifier_index.hpp>
-#include <nil/crypto3/zk/snark/systems/plonk/pickles/proof.hpp>
-#include <nil/crypto3/zk/snark/systems/plonk/pickles/expr.hpp>
-#include <nil/crypto3/zk/snark/systems/plonk/pickles/constants.hpp>
-#include <nil/crypto3/zk/commitments/polynomial/kimchi_pedersen.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/pickles/detail.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/pickles/verifier_index.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/pickles/proof.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/pickles/expr.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/pickles/constants.hpp>
+#include <parallel/nil/crypto3/zk/commitments/polynomial/kimchi_pedersen.hpp>
 
-#include <nil/crypto3/math/domains/evaluation_domain.hpp>
-#include <nil/crypto3/math/polynomial/polynomial.hpp>
+#include <parallel/nil/crypto3/math/domains/evaluation_domain.hpp>
+#include <parallel/nil/crypto3/math/polynomial/polynomial.hpp>
 
 #include <map>
 #include <algorithm>

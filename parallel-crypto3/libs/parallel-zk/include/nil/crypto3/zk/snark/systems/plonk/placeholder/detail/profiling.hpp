@@ -31,10 +31,10 @@
 #include <boost/property_tree/ptree.hpp>
 #include <boost/property_tree/json_parser.hpp>
 
-#include <nil/crypto3/math/algorithms/make_evaluation_domain.hpp>
-#include <nil/crypto3/zk/snark/systems/plonk/placeholder/params.hpp>
-#include <nil/crypto3/zk/snark/systems/plonk/placeholder/preprocessor.hpp>
-#include <nil/crypto3/zk/commitments/type_traits.hpp>
+#include <parallel/nil/crypto3/math/algorithms/make_evaluation_domain.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/placeholder/params.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/placeholder/preprocessor.hpp>
+#include <parallel/nil/crypto3/zk/commitments/type_traits.hpp>
 
 namespace nil {
     namespace crypto3 {

@@ -29,7 +29,7 @@
 #include <vector>
 
 #include <boost/multiprecision/integer.hpp>
-#include <nil/crypto3/math/polynomial/polynomial.hpp>
+#include <parallel/nil/crypto3/math/polynomial/polynomial.hpp>
 
 namespace nil {
     namespace crypto3 {

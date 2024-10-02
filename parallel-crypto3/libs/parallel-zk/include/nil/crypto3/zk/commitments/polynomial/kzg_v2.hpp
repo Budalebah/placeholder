@@ -38,8 +38,8 @@
 #include <boost/iterator/zip_iterator.hpp>
 #include <boost/accumulators/accumulators.hpp>
 
-#include <nil/crypto3/math/polynomial/polynomial.hpp>
-#include <nil/crypto3/math/polynomial/lagrange_interpolation.hpp>
+#include <parallel/nil/crypto3/math/polynomial/polynomial.hpp>
+#include <parallel/nil/crypto3/math/polynomial/lagrange_interpolation.hpp>
 #include <nil/crypto3/algebra/type_traits.hpp>
 #include <nil/crypto3/algebra/algorithms/pair.hpp>
 #include <nil/crypto3/algebra/multiexp/multiexp.hpp>
@@ -50,11 +50,11 @@
 
 #include <nil/crypto3/marshalling/algebra/types/curve_element.hpp>
 
-#include <nil/crypto3/zk/transcript/fiat_shamir.hpp>
-#include <nil/crypto3/math/polynomial/polynomial.hpp>
+#include <parallel/nil/crypto3/zk/transcript/fiat_shamir.hpp>
+#include <parallel/nil/crypto3/math/polynomial/polynomial.hpp>
 
-#include <nil/crypto3/zk/commitments/batched_commitment.hpp>
-#include <nil/crypto3/zk/detail/field_element_consumer.hpp>
+#include <parallel/nil/crypto3/zk/commitments/batched_commitment.hpp>
+#include <parallel/nil/crypto3/zk/detail/field_element_consumer.hpp>
 
 using namespace nil::crypto3::math;
 

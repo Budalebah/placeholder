@@ -49,12 +49,12 @@
 #ifndef CRYPTO3_ZK_R1CS_TO_SAP_BASIC_POLICY_HPP
 #define CRYPTO3_ZK_R1CS_TO_SAP_BASIC_POLICY_HPP
 
-#include <nil/crypto3/math/coset.hpp>
-#include <nil/crypto3/math/algorithms/make_evaluation_domain.hpp>
-#include <nil/crypto3/math/domains/evaluation_domain.hpp>
+#include <parallel/nil/crypto3/math/coset.hpp>
+#include <parallel/nil/crypto3/math/algorithms/make_evaluation_domain.hpp>
+#include <parallel/nil/crypto3/math/domains/evaluation_domain.hpp>
 
-#include <nil/crypto3/zk/snark/arithmetization/arithmetic_programs/sap.hpp>
-#include <nil/crypto3/zk/snark/arithmetization/constraint_satisfaction_problems/r1cs.hpp>
+#include <parallel/nil/crypto3/zk/snark/arithmetization/arithmetic_programs/sap.hpp>
+#include <parallel/nil/crypto3/zk/snark/arithmetization/constraint_satisfaction_problems/r1cs.hpp>
 
 namespace nil {
     namespace crypto3 {

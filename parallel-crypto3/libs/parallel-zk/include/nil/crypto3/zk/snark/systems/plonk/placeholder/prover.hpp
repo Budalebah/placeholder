@@ -31,20 +31,20 @@
 #include <chrono>
 #include <set>
 
-#include <nil/crypto3/math/polynomial/polynomial.hpp>
+#include <parallel/nil/crypto3/math/polynomial/polynomial.hpp>
 
-#include <nil/crypto3/container/merkle/tree.hpp>
+#include <parallel/nil/crypto3/container/merkle/tree.hpp>
 
-#include <nil/crypto3/zk/commitments/polynomial/lpc.hpp>
-#include <nil/crypto3/zk/transcript/fiat_shamir.hpp>
-#include <nil/crypto3/zk/snark/arithmetization/plonk/constraint.hpp>
-#include <nil/crypto3/zk/snark/arithmetization/plonk/assignment.hpp>
-#include <nil/crypto3/zk/snark/systems/plonk/placeholder/detail/placeholder_policy.hpp>
-#include <nil/crypto3/zk/snark/systems/plonk/placeholder/permutation_argument.hpp>
-#include <nil/crypto3/zk/snark/systems/plonk/placeholder/lookup_argument.hpp>
-#include <nil/crypto3/zk/snark/systems/plonk/placeholder/gates_argument.hpp>
-#include <nil/crypto3/zk/snark/systems/plonk/placeholder/params.hpp>
-#include <nil/crypto3/zk/snark/systems/plonk/placeholder/preprocessor.hpp>
+#include <parallel/nil/crypto3/zk/commitments/polynomial/lpc.hpp>
+#include <parallel/nil/crypto3/zk/transcript/fiat_shamir.hpp>
+#include <parallel/nil/crypto3/zk/snark/arithmetization/plonk/constraint.hpp>
+#include <parallel/nil/crypto3/zk/snark/arithmetization/plonk/assignment.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/placeholder/detail/placeholder_policy.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/placeholder/permutation_argument.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/placeholder/lookup_argument.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/placeholder/gates_argument.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/placeholder/params.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/placeholder/preprocessor.hpp>
 
 #include <nil/crypto3/bench/scoped_profiler.hpp>
 
@@ -148,6 +148,7 @@ namespace nil {
                         transcript(_proof.commitments[VARIABLE_VALUES_BATCH]);
 
                         // 4. permutation_argument
+                        auto start = std::chrono::high_resolution_clock::now();
                         if( constraint_system.copy_constraints().size() > 0 ){
                             auto permutation_argument = placeholder_permutation_argument<FieldType, ParamsType>::prove_eval(
                                 constraint_system,
@@ -161,8 +162,11 @@ namespace nil {
                             _F_dfs[1] = std::move(permutation_argument.F_dfs[1]);
                             _F_dfs[2] = std::move(permutation_argument.F_dfs[2]);
                         }
+                        auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - start);
+                        std::cout << "permutation_argument " << duration.count() << "\n";
 
                         // 5. lookup_argument
+                        start = std::chrono::high_resolution_clock::now();
                         {
                             auto lookup_argument_result = lookup_argument();
                             _F_dfs[3] = std::move(lookup_argument_result.F_dfs[0]);
@@ -172,12 +176,16 @@ namespace nil {
                         }
 
                         if( constraint_system.copy_constraints().size() > 0 || constraint_system.lookup_gates().size() > 0){
+                            auto commit_start = std::chrono::high_resolution_clock::now();
                             _proof.commitments[PERMUTATION_BATCH] = _commitment_scheme.commit(PERMUTATION_BATCH);
+                            auto transcript_start = std::chrono::high_resolution_clock::now();
                             transcript(_proof.commitments[PERMUTATION_BATCH]);
                         }
+                        duration = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - start);
+                        std::cout << "lookup_argument " << duration.count() << "\n";
 
                         // 6. circuit-satisfability
-
+                        start = std::chrono::high_resolution_clock::now();
                         polynomial_dfs_type mask_polynomial(
                             0, preprocessed_public_data.common_data.basic_domain->m,
                             typename FieldType::value_type(1u)
@@ -191,6 +199,8 @@ namespace nil {
                             mask_polynomial,
                             transcript
                         )[0];
+                        duration = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now() - start);
+                        std::cout << "gates argument " << duration.count() << "\n";
 
                         /////TEST
 #ifdef ZK_PLACEHOLDER_DEBUG_ENABLED
@@ -220,7 +230,6 @@ namespace nil {
                                 _commitment_scheme.eval_polys_and_add_roots_to_transcipt(transcript);
                             }
                         }
-
                         return _proof;
                     }
 

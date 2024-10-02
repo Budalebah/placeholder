@@ -28,15 +28,15 @@
 #define CRYPTO3_ZK_PLONK_BATCHED_PICKLES_VERIFIER_INDEXER_HPP
 
 #include <nil/crypto3/hash/detail/poseidon/poseidon_constants.hpp>
-#include <nil/crypto3/zk/commitments/polynomial/kimchi_pedersen.hpp>
+#include <parallel/nil/crypto3/zk/commitments/polynomial/kimchi_pedersen.hpp>
 
-#include <nil/crypto3/zk/snark/systems/plonk/pickles/alphas.hpp>
-#include <nil/crypto3/zk/snark/systems/plonk/pickles/detail.hpp>
-#include <nil/crypto3/zk/snark/systems/plonk/pickles/constants.hpp>
-#include <nil/crypto3/zk/snark/systems/plonk/pickles/expr.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/pickles/alphas.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/pickles/detail.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/pickles/constants.hpp>
+#include <parallel/nil/crypto3/zk/snark/systems/plonk/pickles/expr.hpp>
 
-#include <nil/crypto3/math/domains/basic_radix2_domain.hpp>
-#include <nil/crypto3/math/polynomial/polynomial.hpp>
+#include <parallel/nil/crypto3/math/domains/basic_radix2_domain.hpp>
+#include <parallel/nil/crypto3/math/polynomial/polynomial.hpp>
 
 #include <array>
 #include <vector>

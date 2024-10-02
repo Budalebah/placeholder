@@ -27,15 +27,15 @@
 #ifndef CRYPTO3_ZK_PLONK_CONSTRAINT_HPP
 #define CRYPTO3_ZK_PLONK_CONSTRAINT_HPP
 
-#include <nil/crypto3/math/polynomial/polynomial.hpp>
-#include <nil/crypto3/math/polynomial/shift.hpp>
-#include <nil/crypto3/math/domains/evaluation_domain.hpp>
+#include <parallel/nil/crypto3/math/polynomial/polynomial.hpp>
+#include <parallel/nil/crypto3/math/polynomial/shift.hpp>
+#include <parallel/nil/crypto3/math/domains/evaluation_domain.hpp>
 
-#include <nil/crypto3/zk/snark/arithmetization/plonk/variable.hpp>
-#include <nil/crypto3/zk/snark/arithmetization/plonk/assignment.hpp>
-#include <nil/crypto3/zk/math/expression.hpp>
-#include <nil/crypto3/zk/math/expression_visitors.hpp>
-#include <nil/crypto3/zk/math/expression_evaluator.hpp>
+#include <parallel/nil/crypto3/zk/snark/arithmetization/plonk/variable.hpp>
+#include <parallel/nil/crypto3/zk/snark/arithmetization/plonk/assignment.hpp>
+#include <parallel/nil/crypto3/zk/math/expression.hpp>
+#include <parallel/nil/crypto3/zk/math/expression_visitors.hpp>
+#include <parallel/nil/crypto3/zk/math/expression_evaluator.hpp>
 
 #include <map>
 
