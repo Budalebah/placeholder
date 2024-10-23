@@ -537,7 +537,7 @@ namespace nil {
                         context res = subcontext(W, new_row_shift, new_max_rows);
                         res.reset_storage();
                         return res;
-                    } 
+                    }
 
 
                 private:
@@ -575,6 +575,12 @@ namespace nil {
 
             template<typename FieldType, GenerationStage stage>
             class generic_component {
+                struct table_params {
+                    std::size_t witnesses;
+                    std::size_t public_inputs;
+                    std::size_t constants;
+                    std::size_t rows;
+                };
                 public:
                     using TYPE = typename std::conditional<static_cast<bool>(stage),
                                  crypto3::zk::snark::plonk_constraint<FieldType>,
@@ -586,6 +592,10 @@ namespace nil {
                     context_type &ct;
 
                 public:
+                    static table_params get_minimal_requirements() {
+                        return {0,0,0,0};
+                    }
+
                     void allocate(TYPE &C, column_type t = column_type::witness) {
                         auto [col, row] = ct.next_free_cell(t);
                         ct.allocate(C, col, row, t);
